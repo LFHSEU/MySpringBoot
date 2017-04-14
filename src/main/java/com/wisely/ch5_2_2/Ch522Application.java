@@ -10,16 +10,17 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class Ch522Application {
 	
-	 @Value("${book.author}")
-	 private String bookAuthor;
-	 @Value("${book.name}")
-	 private String bookName;
+	@Value("${book.author}")
+	private String bookAuthor;
+
+	@Value("${book.name}")
+	private String bookName;
 	
-	 @RequestMapping("/")
-	    String index() {
-		
-	        return "book name is:"+bookName+" and book author is:" + bookAuthor;
-	    }
+	@RequestMapping("/")
+	public String index() {
+
+		return "book name is:"+bookName+" and book author is:" + bookAuthor;
+	}
 
     public static void main(String[] args) { 
         SpringApplication.run(Ch522Application.class, args);
